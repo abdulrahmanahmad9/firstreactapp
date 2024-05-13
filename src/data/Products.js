@@ -1,24 +1,29 @@
 import React from 'react'
+import ProductCards from '../components/ProductCards';
 
-const data = [
-    {
-      name: 'cookies ',
-      image: <img src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD-Co8Tub0uxqvr2-4q3ckcnZbW0IjJq3C0VR4Z_zrsQ&s'/>,
-      price: 10.99
-    },
-    {
-      name: 'Coffee Mug',
-      image: <img src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD-Co8Tub0uxqvr2-4q3ckcnZbW0IjJq3C0VR4Z_zrsQ&s'/>,
-      price: 7.99
-    }
-  ];
 
-export const Products = ({name,price,image}) => {
+export const Products = () => {
+  const items = [      {
+    image: "https://cdn.vox-cdn.com/thumbor/6kLvmWfhU4h64EhC0S6tsn714fI=/0x0:4032x3024/1200x900/filters:focal(1694x1190:2338x1834)/cdn.vox-cdn.com/uploads/chorus_image/image/59740845/IMG_1503.42.jpg",
+    name: "Cafe Latte",
+    description: " Indulge in the creamy elegance Café Latte",
+  },
+  {
+    image: "https://www.acouplecooks.com/wp-content/uploads/2022/01/Iced-Americano-008s.jpg",
+    name: "Ice Americano",
+    description: "Quench your thirst with Iced Americano"
+  },]
+  const productCards= items.map(item => (
+    <ProductCards
+    image={item.image}
+    name={item.name}
+    description={item.description}
+  />
+  ));
+  
   return (
-    <div> 
-     <h1> {name}</h1>
-    <h4>{price}</h4>
-    <img src= {image}/>
+    <div style={{display:"flex", flexWrap:"wrap"}}> 
+   {productCards}
     </div>
   )
 }

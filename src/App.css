@@ -60,3 +60,12 @@ img {
   border-radius: 10px;
 
 }
+.image-container {
+  width: 200px;
+  length: 200px;
+}
+
+.card {
+
+  border: #000000;
+}
